@@ -6,7 +6,10 @@ import { Query } from '@nestjs/graphql';
   providers: [HelloWorldResolver]
 })
 export class HelloWorldModule {
-  @Query(() => String)
+  @Query(() => String, {
+    description: 'Returns a simple hello world message.',
+    name: 'hello'
+  })
   helloWorld(): string {
     return 'Hello World!';
   }
