@@ -3,7 +3,6 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { HelloWorldModule } from './hello-world/hello-world.module';
-import { HelloWorldResolver } from './—no-spec/hello-world/hello-world.resolver';
 
 @Module({
   imports: [
@@ -14,6 +13,5 @@ import { HelloWorldResolver } from './—no-spec/hello-world/hello-world.resolve
     HelloWorldModule,
   ],
   controllers: [],
-  providers: [HelloWorldResolver],
 })
 export class AppModule {}
