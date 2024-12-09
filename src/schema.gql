@@ -6,5 +6,5 @@ type Query {
   """Returns a simple hello world message."""
   hello: String!
   randomNumber: Float!
-  randomFromZeroTo: Int!
+  randomFromZeroTo(to: Float!): Int!
 }

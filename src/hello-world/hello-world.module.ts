@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { HelloWorldResolver } from './hello-world.resolver';
-import { Float, Int, Query } from '@nestjs/graphql';
+import { Args, Float, Int, Query } from '@nestjs/graphql';
 
 @Module({
   providers: [HelloWorldResolver]
@@ -20,7 +20,7 @@ export class HelloWorldModule {
   }
 
   @Query(() => Int, {name: 'randomFromZeroTo'})
-  getRandomFromZeroTo(): number {
-    return Math.floor(Math.random() * 10);
+  getRandomFromZeroTo(@Args ('to')to: number): number {
+    return Math.floor(Math.random() * to);
   }
 }
