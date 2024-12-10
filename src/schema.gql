@@ -11,4 +11,5 @@ type Query {
   Returns a random number from 0 to the specified number, with 6 default.
   """
   randomFromZeroTo(to: Int): Int!
+  todos: [String!]!
 }
