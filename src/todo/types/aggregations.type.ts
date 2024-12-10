@@ -12,6 +12,6 @@ export class aggegationsType{
     @Field(() => Int)
     pending:number;
 
-    @Field(() => Int)
+    @Field(() => Int, {deprecationReason: 'Use total field instead'})
     totalTodos:number;
 }

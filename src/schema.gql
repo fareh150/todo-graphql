@@ -13,7 +13,7 @@ type aggegationsType {
   total: Int!
   completed: Int!
   pending: Int!
-  totalTodos: Int!
+  totalTodos: Int! @deprecated(reason: "Use total field instead")
 }
 
 type Query {
