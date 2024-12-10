@@ -15,17 +15,17 @@ export class TodoService {
         {
             id: 2,
             description: 'Gema del Tiempo',
-            done: false
+            done: true
         },
         {
             id: 3,
             description: 'Gema de la Realidad',
-            done: false
+            done: true
         },
         {
             id: 4,
             description: 'Gema del Poder',
-            done: false
+            done: true
         },
         {
             id: 5,
@@ -35,9 +35,21 @@ export class TodoService {
         {
             id: 6,
             description: 'Gema de la Mente',
-            done: false
+            done: true
         }
     ]
+
+    get totalTodos(): number {
+        return this.todos.length;
+    }
+
+    get completedTodos(): number {
+        return this.todos.filter(todo => todo.done).length;
+    }
+
+    get pendingTodos(): number {
+        return this.todos.filter(todo => !todo.done).length;
+    }
 
     findAll(statusArgs: StatusArgs): Todo[] {
         if (statusArgs.status !== undefined)
