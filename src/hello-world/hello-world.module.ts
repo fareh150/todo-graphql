@@ -19,9 +19,9 @@ export class HelloWorldModule {
     return Math.random() * 100;
   }
 
-  @Query(() => Int, {name: 'randomFromZeroTo', description: 'Returns a random number from 0 to the specified number.'})
+  @Query(() => Int, {name: 'randomFromZeroTo', description: 'Returns a random number from 0 to the specified number, with 6 default.'})
   getRandomFromZeroTo(
-    @Args ('to', {type: () => Int})to: number
+    @Args ('to', {type: () => Int, nullable: true})to: number = 6
   ): number {
     return Math.floor(Math.random() * to);
   }
