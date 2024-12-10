@@ -17,7 +17,7 @@ type Query {
   Returns a random number from 0 to the specified number, with 6 default.
   """
   randomFromZeroTo(to: Int): Int!
-  todos: [Todo!]!
+  todos(status: Boolean): [Todo!]!
   todo(id: Int!): Todo!
 }
 
